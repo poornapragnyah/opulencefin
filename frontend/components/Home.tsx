@@ -104,7 +104,7 @@ const HomePage = () => {
   <section className="hero bg-primary text-primary-content">
     <div className="hero-content text-center">
       <div className="max-w-md">
-        <h2 className="text-3xl font-semibold mb-4">Ready to Secure Your Financial Future?</h2>
+        <h2 className="text-3xl font-semibold my-4">Ready to Secure Your Financial Future?</h2>
         <Link href="/calendar" className="btn btn-secondary">
           Schedule a Consultation
         </Link>

@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-
+import '../globals.css';
+import Image from 'next/image';
+import { ThemeProvider } from 'next-themes';
 
 const AppointmentBooking = () => {
   const [step, setStep] = useState(1);
@@ -41,7 +43,7 @@ const AppointmentBooking = () => {
         <option value="retirement-planning">Retirement Planning</option>
         <option value="tax-strategies">Tax Strategies</option>
       </select>
-      <button className="btn btn-primary mt-4" onClick={() => setStep(2)}>Next</button>
+      <button className="btn btn-primary mt-4 rounded-xl" onClick={() => setStep(2)}>Next</button>
     </div>
   );
 
@@ -117,8 +119,8 @@ const AppointmentBooking = () => {
         />
       </div>
       <div className="mt-4">
-        <button type="button" className="btn btn-secondary mr-2" onClick={() => setStep(1)}>Back</button>
-        <button type="submit" className="btn btn-primary">Book Appointment</button>
+        <button type="button" className="btn btn-secondary mr-2 rounded-xl" onClick={() => setStep(1)}>Back</button>
+        <button type="submit" className="btn btn-primary rounded-xl">Book Appointment</button>
       </div>
     </form>
   );
@@ -128,14 +130,15 @@ const AppointmentBooking = () => {
       <h2 className="text-2xl font-bold mb-4">Appointment Booked!</h2>
       <p>Thank you for booking an appointment with OpulenceFin. We'll be in touch soon to confirm your appointment.</p>
       <div className="mt-4">
-        <button className="btn btn-primary" onClick={() => setStep(1)}>Book Another Appointment</button>
+        <button className="btn btn-primary rounded-xl" onClick={() => setStep(1)}>Book Another Appointment</button>
       </div>
     </div>
   );
 
   return (
+
     <div className="min-h-screen bg-base-200 flex items-center justify-center">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl rounded-xl">
         <div className="card-body">
           {step === 1 && renderStep1()}
           {step === 2 && renderStep2()}
@@ -143,6 +146,7 @@ const AppointmentBooking = () => {
         </div>
       </div>
     </div>
+
   );
 };
 
