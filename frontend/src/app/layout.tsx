@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProviderWrapper } from './ThemeProviderWrapper'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-      <ThemeProvider attribute="data-theme" defaultTheme="forest" themes={['forest','emerald']}>
+        <ThemeProviderWrapper>
           {children}
-        </ThemeProvider>
+        </ThemeProviderWrapper>
       </body>
     </html>
   )

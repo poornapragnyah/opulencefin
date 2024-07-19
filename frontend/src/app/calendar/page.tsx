@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import '../globals.css';
 import Image from 'next/image';
-import { ThemeProvider } from 'next-themes';
 
 const AppointmentBooking = () => {
   const [step, setStep] = useState(1);
