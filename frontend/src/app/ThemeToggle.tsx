@@ -1,61 +1,57 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
-  if (!mounted) {
-    return null
-  }
+    if (!mounted) {
+        return null
+    }
 
-  const toggleTheme = () => {
-    setTheme(theme === 'forest' ? 'emerald' : 'forest')
-  }
+    const toggleTheme = () => {
+        setTheme(theme === 'forest' ? 'emerald' : 'forest')
+    }
 
-  return (
-    <label className="grid cursor-pointer place-items-center mr-2">
-      <input
-        type="checkbox"
-        checked={theme === 'emerald'}
-        onChange={toggleTheme}
-        className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-      />
-      <svg
-        className="stroke-base-100 fill-base-100 col-start-2 row-start-1"
-        xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="5" />
-        <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-      </svg>
-      <svg
-        className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
-        xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </label>
-  )
+    return (
+        <div className="dropdown mb-72">
+            <div tabIndex={0} role="button" className="btn m-1">
+                Theme
+                <svg
+                    width="12px"
+                    height="12px"
+                    className="inline-block h-2 w-2 fill-current opacity-60"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048">
+                    <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                </svg>
+            </div>
+            <ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Default"
+                        value="default"
+                        onChange={toggleTheme}
+                    />
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Light Mode"
+                        value="emerald"
+                        onChange={toggleTheme}
+                    />
+                </li>
+            </ul>
+        </div>
+    )
 }

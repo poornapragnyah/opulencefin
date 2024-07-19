@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import ContactFormPopup from './ContactFormPopup';
+import ContactFormPopup from './modals/ContactFormPopup';
 import { ThemeToggle } from '@/app/ThemeToggle';
 
 const NavbarComponent = () => {
@@ -61,7 +61,7 @@ const NavbarComponent = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <div className="hidden lg:inline-block">
+    <div className="hidden lg:block mr-4">
   <ThemeToggle/>
 </div>
         <a className="btn"><label htmlFor="contact-modal">Contact Us</label></a>

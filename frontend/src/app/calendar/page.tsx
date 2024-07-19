@@ -118,8 +118,8 @@ const AppointmentBooking = () => {
         />
       </div>
       <div className="mt-4">
-        <button type="button" className="btn btn-secondary mr-2 rounded-xl" onClick={() => setStep(1)}>Back</button>
-        <button type="submit" className="btn btn-primary rounded-xl">Book Appointment</button>
+        <button type="button" className="btn btn-secondary  rounded-xl" onClick={() => setStep(1)}>Back</button>
+        <button type="submit" className="btn btn-primary  rounded-xl">Book Appointment</button>
       </div>
     </form>
   );
